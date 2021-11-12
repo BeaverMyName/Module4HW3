@@ -4,12 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Module4HW3.Models
+namespace DatabaseAccess.Models
 {
-    public class Title
+    public class Client
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Employee> Employees { get; set; } = new List<Employee>();
+        public List<Project> Projects { get; set; }
+
+        public Client()
+        {
+            Projects = new List<Project>();
+        }
     }
 }

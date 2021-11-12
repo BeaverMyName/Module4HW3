@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Module4HW3.Models
+namespace DatabaseAccess.Models
 {
     public class Project
     {
@@ -12,6 +12,13 @@ namespace Module4HW3.Models
         public string Name { get; set; }
         public decimal Budget { get; set; }
         public DateTime StartedDate { get; set; }
-        public List<EmployeeProject> EmployeeProject { get; set; } = new List<EmployeeProject>();
+        public List<EmployeeProject> EmployeeProject { get; set; }
+        public int ClientId { get; set; }
+        public Client Client { get; set; }
+
+        public Project()
+        {
+            EmployeeProject = new List<EmployeeProject>();
+        }
     }
 }

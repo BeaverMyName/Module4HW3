@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Module4HW3.Models
+namespace DatabaseAccess.Models
 {
     public class Employee
     {
@@ -17,6 +17,11 @@ namespace Module4HW3.Models
         public Office Office { get; set; }
         public int TitleId { get; set; }
         public Title Title { get; set; }
-        public List<EmployeeProject> EmployeeProject { get; set; } = new List<EmployeeProject>();
+        public List<EmployeeProject> EmployeeProject { get; set; }
+
+        public Employee()
+        {
+            EmployeeProject = new List<EmployeeProject>();
+        }
     }
 }

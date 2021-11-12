@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Module4HW3.Models;
+using DatabaseAccess.Models;
 
-namespace Module4HW3.Configurations
+namespace DatabaseAccess.Configurations
 {
     public class OfficeConfiguration : IEntityTypeConfiguration<Office>
     {

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Module4HW3.Models;
+using DatabaseAccess.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Module4HW3.Configurations
+namespace DatabaseAccess.Configurations
 {
     public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
     {

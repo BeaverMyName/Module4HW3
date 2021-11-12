@@ -5,18 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
-using Module4HW3.Models;
+using DatabaseAccess.Models;
 using Microsoft.Extensions.Configuration;
-using Module4HW3.Configurations;
+using DatabaseAccess.Configurations;
 
-namespace Module4HW3
+namespace DatabaseAccess
 {
     public class BankContext : DbContext
     {
-        public BankContext()
+        public BankContext(DbContextOptions contextOptions)
+            : base(contextOptions)
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
         }
 
         public DbSet<Employee> Employees { get; set; }
@@ -36,8 +35,7 @@ namespace Module4HW3
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            IConfiguration configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("Bank"));
+            optionsBuilder.LogTo(Console.WriteLine);
         }
     }
 }

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatabaseAccess.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Module4HW3.Models;
 
-namespace Module4HW3.Configurations
+namespace DatabaseAccess.Configurations
 {
-    public class TitleConfiguration : IEntityTypeConfiguration<Title>
+    public class ProjectConfiguration : IEntityTypeConfiguration<Project>
     {
-        public void Configure(EntityTypeBuilder<Title> builder)
+        public void Configure(EntityTypeBuilder<Project> builder)
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
