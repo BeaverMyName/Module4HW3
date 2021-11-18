@@ -11,7 +11,7 @@ namespace DatabaseAccess.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Location { get; set; }
-        public List<Employee> Employees { get; set; }
+        public virtual List<Employee> Employees { get; set; }
 
         public Office()
         {
